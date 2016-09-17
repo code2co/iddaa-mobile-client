@@ -1,4 +1,14 @@
-angular.module('bankomaclar.controllers', ['bankomaclar.factories'])
+angular.module('bankomaclar.controllers', ['bankomaclar.services'])
+
+.controller('GamesCtrl', function($scope, games) {
+  games.getGames()
+    .then(function(response){
+      $scope.games = response.data;
+    }, function (error) {
+      console.log("Error getting HTTP Data");
+    });
+
+})
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -42,16 +52,6 @@ angular.module('bankomaclar.controllers', ['bankomaclar.factories'])
   };
 })
 
-.controller('GamesCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
 
 .controller('GameCtrl', function($scope, $stateParams) {
 });
