@@ -1,4 +1,4 @@
-angular.module('bankomaclar.controllers', [])
+angular.module('bankomaclar.controllers', ['bankomaclar.factories'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
