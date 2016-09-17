@@ -9,25 +9,26 @@ angular.module('bankomaclar.controllers', ['bankomaclar.factories'])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  // TODO : Buradaki controllerlardan sildigin dosyalara ait olanlari kaldir ve ayni seyleri App.js uzerinde de yap
   // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
+  // $scope.loginData = {};
+  //
+  // // Create the login modal that we will use later
+  // $ionicModal.fromTemplateUrl('templates/login.html', {
+  //   scope: $scope
+  // }).then(function(modal) {
+  //   $scope.modal = modal;
+  // });
+  //
+  // // Triggered in the login modal to close it
+  // $scope.closeLogin = function() {
+  //   $scope.modal.hide();
+  // };
+  //
+  // // Open the login modal
+  // $scope.login = function() {
+  //   $scope.modal.show();
+  // };
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
@@ -41,7 +42,7 @@ angular.module('bankomaclar.controllers', ['bankomaclar.factories'])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('GamesCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -52,5 +53,5 @@ angular.module('bankomaclar.controllers', ['bankomaclar.factories'])
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('GameCtrl', function($scope, $stateParams) {
 });
