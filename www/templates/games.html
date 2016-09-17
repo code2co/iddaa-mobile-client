@@ -1,5 +1,9 @@
 <ion-view view-title="Banko Maçlar">
   <ion-content class="padding">
+    <ion-refresher
+      pulling-text="Yenilemek için aşağı çekin..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
     <div class="list card" ng-repeat="game in games">
       <div class="item item-divider" ng-style="{'background-color': '#018641'}">
         <p ng-style="{color: '#ffffff'}"><b>{{game.date}} | {{game.code}} | {{game.teams}} </b></p>

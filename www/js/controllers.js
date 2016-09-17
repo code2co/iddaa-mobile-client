@@ -8,6 +8,16 @@ angular.module('bankomaclar.controllers', ['bankomaclar.services'])
       console.log("Error getting HTTP Data");
     });
 
+  $scope.doRefresh = function() {
+    games.getGames()
+      .then(function(response){
+        $scope.games = response.data;
+        $scope.$broadcast('scroll.refreshComplete');
+      }, function (error) {
+        console.log("Error getting HTTP Data");
+      });
+  };
+
 })
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
